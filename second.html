@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+    <style>
+
+          .cards-container{
+            width: 500px;
+          }
+    </style>
+
+    <div >
+            <h1>Loading.......<h1>
+    </div>
+      <script>
+        let container = document.getElementsByClassName("cards-container")[0]
+
+        let cookie = document.cookie;
+        if(cookie){
+            let obj = cookie.split("=")[1];
+            let card = JSON.parse(obj);
+
+            let innerHtml = `<div class="top">
+        <div class="top-left">
+            <b class="status ${card.status.toLowerCase()} data-tilt data-tilt-scale="1.1" ">${card.status}</b>
+            <span class="case-number">${card.caseNumber}</span>
+        </div>
+        <div class="top-right">
+            <span class="date">${card.date}</span>
+        </div>
+    </div>
+    <div class="bottom">
+        <b class="from">${card.fromLocation}</b>
+        <span class="to">${card.toLocation}</span>
+    </div>
+    <span class="amount">${card.fare}</span>`
+
+
+     let divCard  = document.createElement("div");
+      divCard.className = "card"
+      divCard.innerHTML = innerHtml
+      
+      
+      container.append(divCard);
+
+      VanillaTilt.init(document.querySelector(".card"), {
+        max: 25,
+        speed: 400
+    });
+    
+    //It also supports NodeList
+    VanillaTilt.init(document.querySelectorAll(".card"));
+
+    }
+
+
+
+        
+      </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,165 @@
+.heading{
+    background-color: black;
+    background: linear-gradient(45deg,black,rgb(36, 29, 29),rgb(146, 143, 143),black);
+    background-size: 200% 200%;
+    
+    animation: color 12s ease-in-out infinite;
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    color: white;
+    /* position: sticky; */
+    top: 0;
+}
+@keyframes color{
+
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50% ;
+    }
+}
+
+.cards-container{
+
+    /* border:1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background: linear-gradient(178deg,black,rgb(36, 29, 29),rgb(71, 53, 53),black);
+
+    /* height: 100vh; */
+    width: 100%;
+    animation: color 12s ease-in-out infinite;
+ 
+}
+
+.card{
+
+    border: 2px solid  gray;;
+    padding : 14px;
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow: 20px 20px 50px rgba(0, 0 , 0 , 0.5);
+    background: rgba(red,green,blue,alpha);
+
+
+}
+
+.amount{
+    float: right;
+    color: whitesmoke;
+}
+
+.status{
+
+   
+    padding: 10px;
+   
+    border-radius: 5px;
+    
+
+    
+}
+.case-number{
+
+    padding: 10px;
+    font-size: 13px;
+    color: whitesmoke;
+
+}
+.top{
+
+    
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 2px solid white;
+    
+    
+}
+.date{
+    color: whitesmoke;
+}
+.top-left{
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+
+    
+}
+
+.top-right{
+    /* border: 2px solid red; */
+    padding-top: 20px;
+
+}
+
+.bottom{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.from{
+    padding: 10px;
+    color: gray;
+}
+
+.to{
+    padding: 10px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+.completed{
+
+    background-color: green;
+    border: 2px solid green;
+    color: white;
+
+}
+
+.pending{
+    background-color: yellow;
+    border: 2px solid yellow;
+    color: black;
+
+}
+
+.approved{
+    background-color:royalblue;
+    border: 2px solid royalblue;
+    color: white;
+
+}
+
+.cancelled{
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+
+
+}
+
+@media (max-width: 1000px) and (min-width : 800px){
+    .cards-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media (max-width: 800px) and (min-width : 600px){
+    .cards-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 600px){
+    .cards-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
